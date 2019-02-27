@@ -19,3 +19,15 @@ y_test=np_utils.to_categorical(y_test,10)
 #print first ten(one-hot) training labels
 print("One-hot labels:")
 print(y_train[:10])
+from keras.models import Sequential
+from keras.layers import Dense,Flatten
+#define the model
+model=Sequential()
+mdoel.add(Flatten(input_shpae=X_train.shape[1:]))
+model.add(Dense(512))
+model.add(Dense(512))
+model.add(Dense(10,acti ation="softmax"))
+#summarize the model
+model.summary()
+#compile the model
+model.compile(loss="categorical_crossentropy",optimizer="rmsprop",metrics=["accuracy"])
